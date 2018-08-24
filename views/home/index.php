@@ -10,7 +10,7 @@ require_once VIEWS.'shared/navigation.php';
 
 <h4 class="feature_sub">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h4>
 
-<div class="grid-layout">
+
 
 <?php if ($data['postCount'] > 0) :?>
 
@@ -22,7 +22,8 @@ require_once VIEWS.'shared/navigation.php';
 
 <?php else : echo "<h2>Not Posts Yet...</h2>"?>
 <?php endif;?>
-    
+
+<div class="grid-layout">
 </div>
 
 <!-- Our product End -->

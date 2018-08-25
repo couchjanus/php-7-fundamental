@@ -1,17 +1,28 @@
 <?php
+// HomeController.php
 
-$posts = include_once MODELS.'Post.php';
+class HomeController
+{
+    // Class properties and methods go here   
+    public function __construct()
+    {
+        render('home/index', ['title'=>'<b>Our Cats</b> Members']);
+    }
 
-// число элементов в массиве можно вычислить при помощи функции count():
+    // public function index()
+    // {
+    //     $title = 'Our <b>Best Cat Members</b>';
 
-// for ($i = 1; $i <= count($posts); $i++)
+    //     render('home/index', ['title'=>$title]);
+    // }
+}
+
+// class HomeController extends Controller
 // {
-//     var_dump($posts[$i]);
+  
+//     public function index()
+//     {  
+//         $title = 'Our <b>Cat Members</b>';
+//         $this->_view->render('home/index', ['title'=>$title]);
+//     }
 // }
-
-$data = [
-    'postCount' =>  count($posts),
-    'posts' => $posts
-];
-
-require_once VIEWS.'home/index.php';

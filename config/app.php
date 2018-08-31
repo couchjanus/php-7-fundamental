@@ -12,4 +12,6 @@
     define('SLOGAN', 'Lets Build Cool Cats Site!');
 
     define('DB', ROOT.'/db/');
+    define('DB_CONFIG_FILE', CONFIG.'db.php');
+    define('LOGS', ROOT.'/logs/');
     

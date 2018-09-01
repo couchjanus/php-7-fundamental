@@ -1,6 +1,6 @@
 <?php
 
-// pdo.select.fetch.assoc.php
+// pdo.select.having.php
 
 // example of PDO MySQL connection
 $params = [
@@ -16,18 +16,9 @@ try {
     $pdo  = new PDO($dsn, $params['user'], $params['pwd']);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    $stmt = $pdo->query("SELECT * FROM categories");
-        
-    // устанавливаем режим выборки
-    $results = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt = $pdo->query("SELECT  SUM(status) as sum, status FROM categories GROUP BY status HAVING sum>=10");
     
-    print_r($results);
-
-    echo "All categories\n\n";
-    while ($row = $stmt->fetch()) {
-        echo $row['name'] . "\n";
-        echo $row['status'] . "\n";
-    }
+    var_dump($stmt->fetch());
 
     echo "All rows fetched successfully\n\n";
 }

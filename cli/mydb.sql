@@ -55,3 +55,19 @@ CREATE TABLE `products` (
 
 
 -- 2018-08-31 10:30:13
+
+DROP TABLE IF EXISTS `products`;
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `category_id` int(11) unsigned DEFAULT NULL,
+  `price` float unsigned NOT NULL,
+  `brand` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `is_new` tinyint(1) NOT NULL DEFAULT '1',
+  `is_recommended` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug` (`slug`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

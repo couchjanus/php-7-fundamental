@@ -1,6 +1,6 @@
 <?php
 
-// pdo.select.fetch.both.php
+// pdo.select.where.assoc.php
 
 // example of PDO MySQL connection
 $params = [
@@ -16,12 +16,10 @@ try {
     $pdo  = new PDO($dsn, $params['user'], $params['pwd']);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    $stmt = $pdo->query("SELECT * FROM categories");
-    $results = $stmt->fetch(PDO::FETCH_BOTH);
-    print_r($results);
-    $results = $stmt->fetchAll(PDO::FETCH_BOTH);
-    echo "All categories\n\n";
-    print_r($results);
+    $stmt = $pdo->query("SELECT  count(*), status FROM categories GROUP BY status");
+    
+    var_dump($stmt->fetchAll());
+
     echo "All rows fetched successfully\n\n";
 }
 catch(PDOException $e) {

@@ -5,7 +5,7 @@
 
 require_once realpath(MODELS.'Category.php');
 
-class CategoryController extends Controller
+class CategoriesController extends Controller
 {
     /**
      * Главная страница управления категориями

@@ -9,7 +9,8 @@
           <li><a href="/blog">Blog</a></li>
           <li><a href="/guest">Guest Book</a></li>
           <li><a href="/contact">Contact</a></li>
-          <li><a href="#" id="cart-trigger"><i class="fas  fa-shopping-cart shopping-cart shoppingcart"></i>&nbsp;Cart</a></li>
+          <li><a href="#" id="cart-trigger"><i class="fas fa-shopping-cart shopping-cart shoppingcart"></i>&nbsp;Cart</a></li>
+          <li><a href="#"><label for="toggle-user" class="animate"><i class="fas fa-user"></i></label></a></li>
         </ul>
       </nav>
 </nav>

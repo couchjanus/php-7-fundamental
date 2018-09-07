@@ -25,5 +25,9 @@ require_once CORE.'Slug.php';
 
 require_once CORE.'View.php';
 require_once CORE.'Controller.php';
-
+require_once CORE.'Request.php';
 require_once CORE.'Router.php';
+
+
+Router::load(CONFIG.'routes.php')
+    ->directPath(Request::uri(), Request::method());

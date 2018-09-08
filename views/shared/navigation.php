@@ -14,3 +14,14 @@
         </ul>
       </nav>
 </nav>
+<dropdown>
+  <input id="toggle-user" type="checkbox">
+  <ul class="animate">
+    <?php if (User::isGuest()) :?>
+      <li class="animate"><a href="/register">SignUp<i class="fa fa-user-plus float-right"></i></a></li>
+      <li class="animate"><a href="/login">LogIn<i class="fa fa-sign-in float-right"></i></a></li>
+    <?php else :?>
+      <li class="animate"><a href="/logout">LogOut<i class="fa fa-sign-out float-right"></i></a></li>
+    <?php endif;?>
+  </ul>
+</dropdown>

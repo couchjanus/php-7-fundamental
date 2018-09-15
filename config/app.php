@@ -15,3 +15,7 @@
     define('DB_CONFIG_FILE', CONFIG.'db.php');
     define('LOGS', ROOT.'/logs/');
     define('SESSION_PREFIX', 'shop_');
+
+    define('DOMAIN', 'http://127.0.0.1:8000');
+    define('FRONT_MAXPAGE', 3);
+    define('ADMIN_MAXPAGE', 10);

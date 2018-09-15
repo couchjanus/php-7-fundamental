@@ -3,6 +3,9 @@ require_once VIEWS.'shared/head.php';
 require_once VIEWS.'shared/navigation.php';
 ?>
 
+<div class="cf"></div>
+<div class="breadcrumb"><?=$breadcrumb;?></div>
+<div class="cf"></div>
 <!-- product Start -->
 <main class="main-container">
     <h1><?php echo $title; ?></h1>        
@@ -16,7 +19,5 @@ require_once VIEWS.'shared/aside.php';
 require_once VIEWS.'shared/footer.php';
 require_once VIEWS.'shared/scripts.php';
 ?>
-             
-
 </body>
 </html>

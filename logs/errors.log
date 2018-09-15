@@ -1,0 +1,312 @@
+[15-Sep-2018 16:35:29 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined function render() in /home/janus/www/php-7-fundamental/controllers/AboutController.php:9
+Stack trace:
+#0 /home/janus/www/php-7-fundamental/core/Router.php(77): AboutController->__construct()
+#1 /home/janus/www/php-7-fundamental/core/Router.php(34): Router->callAction('AboutController', 'index', '/')
+#2 /home/janus/www/php-7-fundamental/core/App.php(19): Router->directPath('about', 'GET')
+#3 /home/janus/www/php-7-fundamental/bootstrap/bootstrap.php(41): App->init()
+#4 /home/janus/www/php-7-fundamental/public/index.php(2): require_once('/home/janus/www...')
+#5 {main}
+  thrown in /home/janus/www/php-7-fundamental/controllers/AboutController.php on line 9
+[15-Sep-2018 16:35:39 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined function render() in /home/janus/www/php-7-fundamental/controllers/ContactController.php:9
+Stack trace:
+#0 /home/janus/www/php-7-fundamental/core/Router.php(77): ContactController->__construct()
+#1 /home/janus/www/php-7-fundamental/core/Router.php(34): Router->callAction('ContactControll...', 'index', '/')
+#2 /home/janus/www/php-7-fundamental/core/App.php(19): Router->directPath('contact', 'GET')
+#3 /home/janus/www/php-7-fundamental/bootstrap/bootstrap.php(41): App->init()
+#4 /home/janus/www/php-7-fundamental/public/index.php(2): require_once('/home/janus/www...')
+#5 {main}
+  thrown in /home/janus/www/php-7-fundamental/controllers/ContactController.php on line 9
+[15-Sep-2018 17:14:55 Europe/Kiev] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in /home/janus/www/php-7-fundamental/views/blog/index.php:36
+Stack trace:
+#0 /home/janus/www/php-7-fundamental/core/View.php(8): require()
+#1 /home/janus/www/php-7-fundamental/controllers/BlogController.php(14): View->render('blog/index', Array)
+#2 /home/janus/www/php-7-fundamental/core/Router.php(84): BlogController->index(Array)
+#3 /home/janus/www/php-7-fundamental/core/Router.php(34): Router->callAction(Object(BlogController), 'index', '/')
+#4 /home/janus/www/php-7-fundamental/core/App.php(19): Router->directPath('blog', 'GET')
+#5 /home/janus/www/php-7-fundamental/bootstrap/bootstrap.php(46): App->init()
+#6 /home/janus/www/php-7-fundamental/public/index.php(2): require_once('/home/janus/www...')
+#7 {main}
+  thrown in /home/janus/www/php-7-fundamental/views/blog/index.php on line 36
+[15-Sep-2018 17:17:37 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined method Post::getTotalPosts() in /home/janus/www/php-7-fundamental/controllers/BlogController.php:11
+Stack trace:
+#0 /home/janus/www/php-7-fundamental/core/Router.php(84): BlogController->index(Array)
+#1 /home/janus/www/php-7-fundamental/core/Router.php(34): Router->callAction(Object(BlogController), 'index', '/')
+#2 /home/janus/www/php-7-fundamental/core/App.php(19): Router->directPath('blog', 'GET')
+#3 /home/janus/www/php-7-fundamental/bootstrap/bootstrap.php(46): App->init()
+#4 /home/janus/www/php-7-fundamental/public/index.php(2): require_once('/home/janus/www...')
+#5 {main}
+  thrown in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 11
+[15-Sep-2018 17:23:34 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined method Connection::makeConnection() in /home/janus/www/php-7-fundamental/models/Post.php:134
+Stack trace:
+#0 /home/janus/www/php-7-fundamental/controllers/BlogController.php(11): Post::getTotalPosts()
+#1 /home/janus/www/php-7-fundamental/core/Router.php(84): BlogController->index(Array)
+#2 /home/janus/www/php-7-fundamental/core/Router.php(34): Router->callAction(Object(BlogController), 'index', '/')
+#3 /home/janus/www/php-7-fundamental/core/App.php(19): Router->directPath('blog', 'GET')
+#4 /home/janus/www/php-7-fundamental/bootstrap/bootstrap.php(46): App->init()
+#5 /home/janus/www/php-7-fundamental/public/index.php(2): require_once('/home/janus/www...')
+#6 {main}
+  thrown in /home/janus/www/php-7-fundamental/models/Post.php on line 134
+[15-Sep-2018 17:27:07 Europe/Kiev] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in /home/janus/www/php-7-fundamental/views/blog/index.php:36
+Stack trace:
+#0 /home/janus/www/php-7-fundamental/core/View.php(8): require()
+#1 /home/janus/www/php-7-fundamental/controllers/BlogController.php(18): View->render('blog/index', Array)
+#2 /home/janus/www/php-7-fundamental/core/Router.php(84): BlogController->index(Array)
+#3 /home/janus/www/php-7-fundamental/core/Router.php(34): Router->callAction(Object(BlogController), 'index', '/')
+#4 /home/janus/www/php-7-fundamental/core/App.php(19): Router->directPath('blog', 'GET')
+#5 /home/janus/www/php-7-fundamental/bootstrap/bootstrap.php(46): App->init()
+#6 /home/janus/www/php-7-fundamental/public/index.php(2): require_once('/home/janus/www...')
+#7 {main}
+  thrown in /home/janus/www/php-7-fundamental/views/blog/index.php on line 36
+[15-Sep-2018 17:29:38 Europe/Kiev] PHP Notice:  Undefined index: slug in /home/janus/www/php-7-fundamental/views/blog/index.php on line 36
+[15-Sep-2018 17:29:38 Europe/Kiev] PHP Notice:  Undefined index: title in /home/janus/www/php-7-fundamental/views/blog/index.php on line 36
+[15-Sep-2018 17:29:38 Europe/Kiev] PHP Notice:  Undefined index: created_at in /home/janus/www/php-7-fundamental/views/blog/index.php on line 40
+[15-Sep-2018 17:29:38 Europe/Kiev] PHP Notice:  Undefined index: pagination in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:29:38 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in /home/janus/www/php-7-fundamental/views/blog/index.php:57
+Stack trace:
+#0 /home/janus/www/php-7-fundamental/core/View.php(8): require()
+#1 /home/janus/www/php-7-fundamental/controllers/BlogController.php(19): View->render('blog/index', Array)
+#2 /home/janus/www/php-7-fundamental/core/Router.php(84): BlogController->index(Array)
+#3 /home/janus/www/php-7-fundamental/core/Router.php(34): Router->callAction(Object(BlogController), 'index', '/')
+#4 /home/janus/www/php-7-fundamental/core/App.php(19): Router->directPath('blog', 'GET')
+#5 /home/janus/www/php-7-fundamental/bootstrap/bootstrap.php(46): App->init()
+#6 /home/janus/www/php-7-fundamental/public/index.php(2): require_once('/home/janus/www...')
+#7 {main}
+  thrown in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:31:31 Europe/Kiev] PHP Notice:  Trying to get property 'slug' of non-object in /home/janus/www/php-7-fundamental/views/blog/index.php on line 36
+[15-Sep-2018 17:31:31 Europe/Kiev] PHP Notice:  Trying to get property 'title' of non-object in /home/janus/www/php-7-fundamental/views/blog/index.php on line 36
+[15-Sep-2018 17:31:31 Europe/Kiev] PHP Notice:  Trying to get property 'created_at' of non-object in /home/janus/www/php-7-fundamental/views/blog/index.php on line 40
+[15-Sep-2018 17:31:31 Europe/Kiev] PHP Notice:  Trying to get property 'slug' of non-object in /home/janus/www/php-7-fundamental/views/blog/index.php on line 36
+[15-Sep-2018 17:31:31 Europe/Kiev] PHP Notice:  Trying to get property 'title' of non-object in /home/janus/www/php-7-fundamental/views/blog/index.php on line 36
+[15-Sep-2018 17:31:31 Europe/Kiev] PHP Notice:  Trying to get property 'created_at' of non-object in /home/janus/www/php-7-fundamental/views/blog/index.php on line 40
+[15-Sep-2018 17:31:31 Europe/Kiev] PHP Notice:  Undefined index: pagination in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:31:31 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in /home/janus/www/php-7-fundamental/views/blog/index.php:57
+Stack trace:
+#0 /home/janus/www/php-7-fundamental/core/View.php(8): require()
+#1 /home/janus/www/php-7-fundamental/controllers/BlogController.php(19): View->render('blog/index', Array)
+#2 /home/janus/www/php-7-fundamental/core/Router.php(84): BlogController->index(Array)
+#3 /home/janus/www/php-7-fundamental/core/Router.php(34): Router->callAction(Object(BlogController), 'index', '/')
+#4 /home/janus/www/php-7-fundamental/core/App.php(19): Router->directPath('blog', 'GET')
+#5 /home/janus/www/php-7-fundamental/bootstrap/bootstrap.php(46): App->init()
+#6 /home/janus/www/php-7-fundamental/public/index.php(2): require_once('/home/janus/www...')
+#7 {main}
+  thrown in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:32:56 Europe/Kiev] PHP Notice:  Undefined index: pagination in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:32:56 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in /home/janus/www/php-7-fundamental/views/blog/index.php:57
+Stack trace:
+#0 /home/janus/www/php-7-fundamental/core/View.php(8): require()
+#1 /home/janus/www/php-7-fundamental/controllers/BlogController.php(19): View->render('blog/index', Array)
+#2 /home/janus/www/php-7-fundamental/core/Router.php(84): BlogController->index(Array)
+#3 /home/janus/www/php-7-fundamental/core/Router.php(34): Router->callAction(Object(BlogController), 'index', '/')
+#4 /home/janus/www/php-7-fundamental/core/App.php(19): Router->directPath('blog', 'GET')
+#5 /home/janus/www/php-7-fundamental/bootstrap/bootstrap.php(46): App->init()
+#6 /home/janus/www/php-7-fundamental/public/index.php(2): require_once('/home/janus/www...')
+#7 {main}
+  thrown in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:35:34 Europe/Kiev] PHP Notice:  Undefined index: pagination in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:35:34 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in /home/janus/www/php-7-fundamental/views/blog/index.php:57
+Stack trace:
+#0 /home/janus/www/php-7-fundamental/core/View.php(8): require()
+#1 /home/janus/www/php-7-fundamental/controllers/BlogController.php(19): View->render('blog/index', Array)
+#2 /home/janus/www/php-7-fundamental/core/Router.php(84): BlogController->index(Array)
+#3 /home/janus/www/php-7-fundamental/core/Router.php(34): Router->callAction(Object(BlogController), 'index', '/')
+#4 /home/janus/www/php-7-fundamental/core/App.php(19): Router->directPath('blog', 'GET')
+#5 /home/janus/www/php-7-fundamental/bootstrap/bootstrap.php(46): App->init()
+#6 /home/janus/www/php-7-fundamental/public/index.php(2): require_once('/home/janus/www...')
+#7 {main}
+  thrown in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:36:16 Europe/Kiev] PHP Notice:  Undefined index: pagination in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:36:16 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in /home/janus/www/php-7-fundamental/views/blog/index.php:57
+Stack trace:
+#0 /home/janus/www/php-7-fundamental/core/View.php(8): require()
+#1 /home/janus/www/php-7-fundamental/controllers/BlogController.php(19): View->render('blog/index', Array)
+#2 /home/janus/www/php-7-fundamental/core/Router.php(84): BlogController->index(Array)
+#3 /home/janus/www/php-7-fundamental/core/Router.php(34): Router->callAction(Object(BlogController), 'index', '/')
+#4 /home/janus/www/php-7-fundamental/core/App.php(19): Router->directPath('blog', 'GET')
+#5 /home/janus/www/php-7-fundamental/bootstrap/bootstrap.php(46): App->init()
+#6 /home/janus/www/php-7-fundamental/public/index.php(2): require_once('/home/janus/www...')
+#7 {main}
+  thrown in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:37:44 Europe/Kiev] PHP Notice:  Undefined index: pagination in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:37:44 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in /home/janus/www/php-7-fundamental/views/blog/index.php:57
+Stack trace:
+#0 /home/janus/www/php-7-fundamental/core/View.php(8): require()
+#1 /home/janus/www/php-7-fundamental/controllers/BlogController.php(19): View->render('blog/index', Array)
+#2 /home/janus/www/php-7-fundamental/core/Router.php(84): BlogController->index(Array)
+#3 /home/janus/www/php-7-fundamental/core/Router.php(34): Router->callAction(Object(BlogController), 'index', '/')
+#4 /home/janus/www/php-7-fundamental/core/App.php(19): Router->directPath('blog', 'GET')
+#5 /home/janus/www/php-7-fundamental/bootstrap/bootstrap.php(46): App->init()
+#6 /home/janus/www/php-7-fundamental/public/index.php(2): require_once('/home/janus/www...')
+#7 {main}
+  thrown in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:37:46 Europe/Kiev] PHP Notice:  Undefined variable: id in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 25
+[15-Sep-2018 17:39:27 Europe/Kiev] PHP Notice:  Undefined index: pagination in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:39:27 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in /home/janus/www/php-7-fundamental/views/blog/index.php:57
+Stack trace:
+#0 /home/janus/www/php-7-fundamental/core/View.php(8): require()
+#1 /home/janus/www/php-7-fundamental/controllers/BlogController.php(19): View->render('blog/index', Array)
+#2 /home/janus/www/php-7-fundamental/core/Router.php(84): BlogController->index(Array)
+#3 /home/janus/www/php-7-fundamental/core/Router.php(34): Router->callAction(Object(BlogController), 'index', '/')
+#4 /home/janus/www/php-7-fundamental/core/App.php(19): Router->directPath('blog', 'GET')
+#5 /home/janus/www/php-7-fundamental/bootstrap/bootstrap.php(46): App->init()
+#6 /home/janus/www/php-7-fundamental/public/index.php(2): require_once('/home/janus/www...')
+#7 {main}
+  thrown in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:39:29 Europe/Kiev] PHP Notice:  Undefined variable: id in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 25
+[15-Sep-2018 17:41:03 Europe/Kiev] PHP Notice:  Undefined variable: id in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 25
+[15-Sep-2018 17:41:03 Europe/Kiev] PHP Notice:  Trying to get property 'title' of non-object in /home/janus/www/php-7-fundamental/views/blog/show.php on line 18
+[15-Sep-2018 17:43:37 Europe/Kiev] PHP Notice:  Undefined index: pagination in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:43:37 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in /home/janus/www/php-7-fundamental/views/blog/index.php:57
+Stack trace:
+#0 /home/janus/www/php-7-fundamental/core/View.php(8): require()
+#1 /home/janus/www/php-7-fundamental/controllers/BlogController.php(19): View->render('blog/index', Array)
+#2 /home/janus/www/php-7-fundamental/core/Router.php(84): BlogController->index(Array)
+#3 /home/janus/www/php-7-fundamental/core/Router.php(34): Router->callAction(Object(BlogController), 'index', '/')
+#4 /home/janus/www/php-7-fundamental/core/App.php(19): Router->directPath('blog', 'GET')
+#5 /home/janus/www/php-7-fundamental/bootstrap/bootstrap.php(46): App->init()
+#6 /home/janus/www/php-7-fundamental/public/index.php(2): require_once('/home/janus/www...')
+#7 {main}
+  thrown in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:43:39 Europe/Kiev] PHP Notice:  Undefined variable: id in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 25
+[15-Sep-2018 17:43:39 Europe/Kiev] PHP Notice:  Undefined variable: post in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 27
+[15-Sep-2018 17:43:39 Europe/Kiev] PHP Notice:  Trying to get property 'title' of non-object in /home/janus/www/php-7-fundamental/views/blog/show.php on line 18
+[15-Sep-2018 17:45:27 Europe/Kiev] PHP Notice:  Undefined index: pagination in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:45:27 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in /home/janus/www/php-7-fundamental/views/blog/index.php:57
+Stack trace:
+#0 /home/janus/www/php-7-fundamental/core/View.php(8): require()
+#1 /home/janus/www/php-7-fundamental/controllers/BlogController.php(19): View->render('blog/index', Array)
+#2 /home/janus/www/php-7-fundamental/core/Router.php(84): BlogController->index(Array)
+#3 /home/janus/www/php-7-fundamental/core/Router.php(34): Router->callAction(Object(BlogController), 'index', '/')
+#4 /home/janus/www/php-7-fundamental/core/App.php(19): Router->directPath('blog', 'GET')
+#5 /home/janus/www/php-7-fundamental/bootstrap/bootstrap.php(46): App->init()
+#6 /home/janus/www/php-7-fundamental/public/index.php(2): require_once('/home/janus/www...')
+#7 {main}
+  thrown in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:45:29 Europe/Kiev] PHP Notice:  Undefined variable: id in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 25
+[15-Sep-2018 17:45:29 Europe/Kiev] PHP Notice:  Undefined variable: post in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 27
+[15-Sep-2018 17:45:29 Europe/Kiev] PHP Notice:  Trying to get property 'title' of non-object in /home/janus/www/php-7-fundamental/views/blog/show.php on line 18
+[15-Sep-2018 17:45:58 Europe/Kiev] PHP Notice:  Undefined index: pagination in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:45:58 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in /home/janus/www/php-7-fundamental/views/blog/index.php:57
+Stack trace:
+#0 /home/janus/www/php-7-fundamental/core/View.php(8): require()
+#1 /home/janus/www/php-7-fundamental/controllers/BlogController.php(19): View->render('blog/index', Array)
+#2 /home/janus/www/php-7-fundamental/core/Router.php(84): BlogController->index(Array)
+#3 /home/janus/www/php-7-fundamental/core/Router.php(34): Router->callAction(Object(BlogController), 'index', '/')
+#4 /home/janus/www/php-7-fundamental/core/App.php(19): Router->directPath('blog', 'GET')
+#5 /home/janus/www/php-7-fundamental/bootstrap/bootstrap.php(46): App->init()
+#6 /home/janus/www/php-7-fundamental/public/index.php(2): require_once('/home/janus/www...')
+#7 {main}
+  thrown in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:45:59 Europe/Kiev] PHP Notice:  Undefined variable: id in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 25
+[15-Sep-2018 17:45:59 Europe/Kiev] PHP Notice:  Undefined variable: post in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 27
+[15-Sep-2018 17:45:59 Europe/Kiev] PHP Notice:  Trying to get property 'title' of non-object in /home/janus/www/php-7-fundamental/views/blog/show.php on line 18
+[15-Sep-2018 17:46:31 Europe/Kiev] PHP Notice:  Undefined index: pagination in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:46:31 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in /home/janus/www/php-7-fundamental/views/blog/index.php:57
+Stack trace:
+#0 /home/janus/www/php-7-fundamental/core/View.php(8): require()
+#1 /home/janus/www/php-7-fundamental/controllers/BlogController.php(19): View->render('blog/index', Array)
+#2 /home/janus/www/php-7-fundamental/core/Router.php(84): BlogController->index(Array)
+#3 /home/janus/www/php-7-fundamental/core/Router.php(34): Router->callAction(Object(BlogController), 'index', '/')
+#4 /home/janus/www/php-7-fundamental/core/App.php(19): Router->directPath('blog', 'GET')
+#5 /home/janus/www/php-7-fundamental/bootstrap/bootstrap.php(46): App->init()
+#6 /home/janus/www/php-7-fundamental/public/index.php(2): require_once('/home/janus/www...')
+#7 {main}
+  thrown in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:46:32 Europe/Kiev] PHP Notice:  Undefined variable: id in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 25
+[15-Sep-2018 17:46:32 Europe/Kiev] PHP Notice:  Undefined variable: post in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 27
+[15-Sep-2018 17:48:21 Europe/Kiev] PHP Notice:  Undefined index: pagination in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:48:21 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in /home/janus/www/php-7-fundamental/views/blog/index.php:57
+Stack trace:
+#0 /home/janus/www/php-7-fundamental/core/View.php(8): require()
+#1 /home/janus/www/php-7-fundamental/controllers/BlogController.php(19): View->render('blog/index', Array)
+#2 /home/janus/www/php-7-fundamental/core/Router.php(84): BlogController->index(Array)
+#3 /home/janus/www/php-7-fundamental/core/Router.php(34): Router->callAction(Object(BlogController), 'index', '/')
+#4 /home/janus/www/php-7-fundamental/core/App.php(19): Router->directPath('blog', 'GET')
+#5 /home/janus/www/php-7-fundamental/bootstrap/bootstrap.php(46): App->init()
+#6 /home/janus/www/php-7-fundamental/public/index.php(2): require_once('/home/janus/www...')
+#7 {main}
+  thrown in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:48:23 Europe/Kiev] PHP Notice:  Undefined variable: id in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 25
+[15-Sep-2018 17:48:23 Europe/Kiev] PHP Notice:  Undefined variable: post in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 27
+[15-Sep-2018 17:48:46 Europe/Kiev] PHP Notice:  Undefined index: pagination in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:48:46 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in /home/janus/www/php-7-fundamental/views/blog/index.php:57
+Stack trace:
+#0 /home/janus/www/php-7-fundamental/core/View.php(8): require()
+#1 /home/janus/www/php-7-fundamental/controllers/BlogController.php(19): View->render('blog/index', Array)
+#2 /home/janus/www/php-7-fundamental/core/Router.php(84): BlogController->index(Array)
+#3 /home/janus/www/php-7-fundamental/core/Router.php(34): Router->callAction(Object(BlogController), 'index', '/')
+#4 /home/janus/www/php-7-fundamental/core/App.php(19): Router->directPath('blog', 'GET')
+#5 /home/janus/www/php-7-fundamental/bootstrap/bootstrap.php(46): App->init()
+#6 /home/janus/www/php-7-fundamental/public/index.php(2): require_once('/home/janus/www...')
+#7 {main}
+  thrown in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:48:47 Europe/Kiev] PHP Notice:  Undefined variable: id in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 25
+[15-Sep-2018 17:48:47 Europe/Kiev] PHP Notice:  Undefined variable: post in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 27
+[15-Sep-2018 17:48:47 Europe/Kiev] PHP Notice:  Trying to get property 'title' of non-object in /home/janus/www/php-7-fundamental/views/blog/show.php on line 18
+[15-Sep-2018 17:50:05 Europe/Kiev] PHP Notice:  Undefined index: pagination in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:50:05 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in /home/janus/www/php-7-fundamental/views/blog/index.php:57
+Stack trace:
+#0 /home/janus/www/php-7-fundamental/core/View.php(8): require()
+#1 /home/janus/www/php-7-fundamental/controllers/BlogController.php(19): View->render('blog/index', Array)
+#2 /home/janus/www/php-7-fundamental/core/Router.php(84): BlogController->index(Array)
+#3 /home/janus/www/php-7-fundamental/core/Router.php(34): Router->callAction(Object(BlogController), 'index', '/')
+#4 /home/janus/www/php-7-fundamental/core/App.php(19): Router->directPath('blog', 'GET')
+#5 /home/janus/www/php-7-fundamental/bootstrap/bootstrap.php(46): App->init()
+#6 /home/janus/www/php-7-fundamental/public/index.php(2): require_once('/home/janus/www...')
+#7 {main}
+  thrown in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:50:07 Europe/Kiev] PHP Notice:  Undefined variable: id in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 25
+[15-Sep-2018 17:50:07 Europe/Kiev] PHP Notice:  Undefined variable: post in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 27
+[15-Sep-2018 17:51:37 Europe/Kiev] PHP Notice:  Undefined variable: post in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 27
+[15-Sep-2018 17:52:59 Europe/Kiev] PHP Notice:  Trying to get property 'title' of non-object in /home/janus/www/php-7-fundamental/views/blog/show.php on line 18
+[15-Sep-2018 17:53:32 Europe/Kiev] PHP Notice:  Undefined index: pagination in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:53:32 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in /home/janus/www/php-7-fundamental/views/blog/index.php:57
+Stack trace:
+#0 /home/janus/www/php-7-fundamental/core/View.php(8): require()
+#1 /home/janus/www/php-7-fundamental/controllers/BlogController.php(19): View->render('blog/index', Array)
+#2 /home/janus/www/php-7-fundamental/core/Router.php(84): BlogController->index(Array)
+#3 /home/janus/www/php-7-fundamental/core/Router.php(34): Router->callAction(Object(BlogController), 'index', '/')
+#4 /home/janus/www/php-7-fundamental/core/App.php(19): Router->directPath('blog', 'GET')
+#5 /home/janus/www/php-7-fundamental/bootstrap/bootstrap.php(46): App->init()
+#6 /home/janus/www/php-7-fundamental/public/index.php(2): require_once('/home/janus/www...')
+#7 {main}
+  thrown in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:53:51 Europe/Kiev] PHP Notice:  Undefined index: pagination in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 17:53:51 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in /home/janus/www/php-7-fundamental/views/blog/index.php:57
+Stack trace:
+#0 /home/janus/www/php-7-fundamental/core/View.php(8): require()
+#1 /home/janus/www/php-7-fundamental/controllers/BlogController.php(19): View->render('blog/index', Array)
+#2 /home/janus/www/php-7-fundamental/core/Router.php(84): BlogController->index(Array)
+#3 /home/janus/www/php-7-fundamental/core/Router.php(34): Router->callAction(Object(BlogController), 'index', '/')
+#4 /home/janus/www/php-7-fundamental/core/App.php(19): Router->directPath('blog', 'GET')
+#5 /home/janus/www/php-7-fundamental/bootstrap/bootstrap.php(46): App->init()
+#6 /home/janus/www/php-7-fundamental/public/index.php(2): require_once('/home/janus/www...')
+#7 {main}
+  thrown in /home/janus/www/php-7-fundamental/views/blog/index.php on line 57
+[15-Sep-2018 18:05:47 Europe/Kiev] PHP Fatal error:  Cannot redeclare BlogController::show() in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 62
+[15-Sep-2018 18:06:32 Europe/Kiev] PHP Notice:  Undefined variable: page in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 25
+[15-Sep-2018 18:06:32 Europe/Kiev] PHP Warning:  Use of undefined constant MAXPAGE - assumed 'MAXPAGE' (this will throw an Error in a future version of PHP) in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 32
+[15-Sep-2018 18:06:32 Europe/Kiev] PHP Notice:  Trying to get property 'id' of non-object in /home/janus/www/php-7-fundamental/views/blog/index.php on line 36
+[15-Sep-2018 18:06:32 Europe/Kiev] PHP Notice:  Trying to get property 'title' of non-object in /home/janus/www/php-7-fundamental/views/blog/index.php on line 36
+[15-Sep-2018 18:06:32 Europe/Kiev] PHP Notice:  Trying to get property 'created_at' of non-object in /home/janus/www/php-7-fundamental/views/blog/index.php on line 40
+[15-Sep-2018 18:06:32 Europe/Kiev] PHP Notice:  Trying to get property 'id' of non-object in /home/janus/www/php-7-fundamental/views/blog/index.php on line 36
+[15-Sep-2018 18:06:32 Europe/Kiev] PHP Notice:  Trying to get property 'title' of non-object in /home/janus/www/php-7-fundamental/views/blog/index.php on line 36
+[15-Sep-2018 18:06:32 Europe/Kiev] PHP Notice:  Trying to get property 'created_at' of non-object in /home/janus/www/php-7-fundamental/views/blog/index.php on line 40
+[15-Sep-2018 18:06:32 Europe/Kiev] PHP Notice:  Trying to get property 'id' of non-object in /home/janus/www/php-7-fundamental/views/blog/index.php on line 36
+[15-Sep-2018 18:06:32 Europe/Kiev] PHP Notice:  Trying to get property 'title' of non-object in /home/janus/www/php-7-fundamental/views/blog/index.php on line 36
+[15-Sep-2018 18:06:32 Europe/Kiev] PHP Notice:  Trying to get property 'created_at' of non-object in /home/janus/www/php-7-fundamental/views/blog/index.php on line 40
+[15-Sep-2018 18:06:32 Europe/Kiev] PHP Warning:  A non-numeric value encountered in /home/janus/www/php-7-fundamental/core/Pagination.php on line 141
+[15-Sep-2018 18:06:32 Europe/Kiev] PHP Warning:  A non-numeric value encountered in /home/janus/www/php-7-fundamental/core/Pagination.php on line 147
+[15-Sep-2018 18:09:35 Europe/Kiev] PHP Notice:  Undefined variable: page in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 25
+[15-Sep-2018 18:09:35 Europe/Kiev] PHP Warning:  Use of undefined constant MAXPAGE - assumed 'MAXPAGE' (this will throw an Error in a future version of PHP) in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 32
+[15-Sep-2018 18:09:35 Europe/Kiev] PHP Warning:  A non-numeric value encountered in /home/janus/www/php-7-fundamental/core/Pagination.php on line 141
+[15-Sep-2018 18:09:35 Europe/Kiev] PHP Warning:  A non-numeric value encountered in /home/janus/www/php-7-fundamental/core/Pagination.php on line 147
+[15-Sep-2018 18:09:56 Europe/Kiev] PHP Notice:  Undefined variable: page in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 25
+[15-Sep-2018 18:09:56 Europe/Kiev] PHP Warning:  Use of undefined constant MAXPAGE - assumed 'MAXPAGE' (this will throw an Error in a future version of PHP) in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 32
+[15-Sep-2018 18:09:56 Europe/Kiev] PHP Warning:  A non-numeric value encountered in /home/janus/www/php-7-fundamental/core/Pagination.php on line 141
+[15-Sep-2018 18:09:56 Europe/Kiev] PHP Warning:  A non-numeric value encountered in /home/janus/www/php-7-fundamental/core/Pagination.php on line 147
+[15-Sep-2018 18:13:32 Europe/Kiev] PHP Notice:  Undefined variable: page in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 25
+[15-Sep-2018 18:15:18 Europe/Kiev] PHP Notice:  Undefined variable: page in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 25
+[15-Sep-2018 18:15:35 Europe/Kiev] PHP Notice:  Undefined variable: page in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 25
+[15-Sep-2018 18:15:42 Europe/Kiev] PHP Notice:  Undefined variable: page in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 25
+[15-Sep-2018 18:15:52 Europe/Kiev] PHP Notice:  Undefined variable: page in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 25
+[15-Sep-2018 18:15:58 Europe/Kiev] PHP Notice:  Undefined variable: page in /home/janus/www/php-7-fundamental/controllers/BlogController.php on line 25

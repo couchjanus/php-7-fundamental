@@ -14,12 +14,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $stmt = $this->_pdo->query("SELECT * FROM categories", PDO::FETCH_CLASS, 'Category');
-        // устанавливаем режим выборки
-        $categories = $stmt->fetchAll(PDO::FETCH_CLASS);
-        $rowCount = $stmt->rowCount();
-        $data['rowCount'] = $rowCount;
-        $data['categories'] = $categories;
+        $data = Category::selectAll();
         $data['title'] = 'Admin Category List Page ';
         $this->_view->render('admin/categories/index', $data);
     }

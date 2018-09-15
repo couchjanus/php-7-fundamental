@@ -2,7 +2,7 @@
 
 /**
  * Модель для работы с пользователями
-*/
+ */
 
 class User extends Model
 {
@@ -22,7 +22,7 @@ class User extends Model
         $sql = "INSERT INTO users(name, email, password, role_id)
                 VALUES(:name, :email, :password, :role)";
 
-        $res = (new self)->pdo->query($sql);
+        $res = (new self)->pdo->prepare($sql);
         $res->bindParam(':name', $options['name'], PDO::PARAM_STR);
         $res->bindParam(':email', $options['email'], PDO::PARAM_STR);
         // generate new password
@@ -46,7 +46,7 @@ class User extends Model
                     WHERE id = :id
                 ";
 
-        $res = (new self)->pdo->query($sql);
+        $res = (new self)->pdo->prepare($sql);
         $res->bindParam(':id', $userId);
         $res->execute();
         $user = $res->fetch(PDO::FETCH_ASSOC);
@@ -67,7 +67,7 @@ class User extends Model
         $password = $options['password'];
 
         if (!password_verify($password, $passwordFromDatabase)) {
-          // update hash from databse - replace old hash $passwordFromDatabase with new hash $newPasswordHash
+            // update hash from databse - replace old hash $passwordFromDatabase with new hash $newPasswordHash
             $password = password_hash($options['password'], PASSWORD_DEFAULT, ["cost" => 12]);
         }
 
@@ -107,7 +107,7 @@ class User extends Model
                 VALUES(:name, :email, :password)
                 ";
 
-        $res = (new self)->pdo->query($sql);
+        $res = (new self)->pdo->prepare($sql);
         $res->bindParam(':name', $name, PDO::PARAM_STR);
         $res->bindParam(':email', $email, PDO::PARAM_STR);
         $res->bindParam(':password', $password, PDO::PARAM_STR);
@@ -170,7 +170,7 @@ class User extends Model
                     WHERE email = :email
                ";
 
-        $res = (new self)->pdo->query($sql);
+        $res = (new self)->pdo->prepare($sql);
         $res->bindParam(':email', $email, PDO::PARAM_STR);
         $res->execute();
 
@@ -193,7 +193,7 @@ class User extends Model
                 WHERE email = :email
                 ";
 
-        $res = (new self)->pdo->query($sql);
+        $res = (new self)->pdo->prepare($sql);
 
         $res->bindParam(':email', $email, PDO::PARAM_INT);
 
@@ -218,13 +218,6 @@ class User extends Model
         Session::set('userId', $userId);
         Session::set('logged', true);
     }
-
-    // public static function auth($userId)
-    // {
-    //     $_SESSION['userId'] = $userId;
-    //     $_SESSION['logged'] = true;
-    // }
-
     /**
      * Проверяем, авторизован ли пользователь при переходе в личный кабинет
      *
@@ -238,15 +231,6 @@ class User extends Model
         }
         header('Location: user/login');
     }
-
-    // public static function checkLog()
-    // {
-    //      //Если сессия есть, то возвращаем id пользователя
-    //     if ($_SESSION['userId']) {
-    //         return $_SESSION['userId'];
-    //     }
-    //     header('Location: user/login');
-    // }
 
 
     /**
@@ -262,13 +246,6 @@ class User extends Model
         }
         return true;
     }
-    // public static function isGuest()
-    // {    
-    //     if ($_SESSION['logged'] == true) {
-    //         return false;
-    //     }
-    //     return true;
-    // }
 
     /**
      * Destroy информацию о пользователе по id
@@ -282,9 +259,47 @@ class User extends Model
                 FROM users
                 WHERE id = :id
                 ";
-        $res = (new self)->pdo->query($sql);
+        $res = (new self)->pdo->prepare($sql);
         $res->bindParam(':id', $userId);
         $res->execute();
     }
+
+    public static function updateProfile($userId, $options)
+    {
+        $sql = "UPDATE users
+                SET phone_number = :phone_number, first_name = :first_name, last_name = :last_name
+                WHERE id = :id";
+        $res = (new self)->pdo->prepare($sql);
+        $res->bindParam(':phone_number', $options['phone_number'], PDO::PARAM_STR);
+        $res->bindParam(':first_name', $options['first_name'], PDO::PARAM_STR);
+        $res->bindParam(':last_name', $options['last_name'], PDO::PARAM_STR);
+        $res->bindParam(':id', $userId, PDO::PARAM_INT);
+        return $res->execute();
+    }
+
+    // check if user has a specific privilege
+    
+    public function hasPrivilege($perm)
+    {
+        if ($this->_role->hasPerm($perm)) {
+            return true;
+        }
+        return false;
+    }
+
+    public static function checkPhoneNumber($id)
+    {
+        $db = Connection::makeConnection();
+        $sql = "SELECT phone_number FROM users
+                    WHERE id = :id";
+        $res = $db->prepare($sql);
+        $res->bindParam(':id', $id, PDO::PARAM_INT);
+        $res->execute();
+
+        if ($res->fetchColumn())
+            return $res->fetchColumn();
+        return false;
+    }
+  
 }
 

@@ -1,6 +1,7 @@
 <?php
 
 require_once realpath(MODELS.'User.php');
+require_once realpath(MODELS.'Role.php');
 
 class UsersController extends Controller
 {
@@ -71,5 +72,4 @@ class UsersController extends Controller
         $this->_view->render('admin/users/edit', $data);
 
     }
-    
 }

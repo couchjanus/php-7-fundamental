@@ -1,12 +1,13 @@
 <?php
 
-require_once realpath(MODELS.'User.php');
 /**
  * Class UserController для работы с пользователем
  */
 
 class UsersController extends Controller
 {
+    protected $userId;
+    protected $user;
 
     /**
      * Class UserController для работы с пользователем
@@ -15,8 +16,6 @@ class UsersController extends Controller
     {
         parent::__construct();
     }
-
-    protected $user;
 
     /**
      * Регистрация пользователя
@@ -71,17 +70,23 @@ class UsersController extends Controller
 
     }
 
+
     public function actionCheck()
     {
-        if (!$_SESSION['logged'] == true) {
+        if (!Session::get('logged') == true) {
             $response = array(
                     'r' => 'fail',
                     'url' => 'login'
                 );
         } else {
+   
+            $this->userId = User::checkLog();
+            $this->user = User::getUserById($this->userId);
+
             $response = array(
-                'r' => 'success',
-                'msg' => 'Logged in'
+                'phone_number' => $this->user['phone_number'],
+                'last_name' => $this->user['last_name'],
+                'first_name' => $this->user['first_name']
             );
         }
 
@@ -100,16 +105,10 @@ class UsersController extends Controller
         $email = '';
         $password = '';
 
-        // if ($_SESSION['userId']) {
-        //     header("Location: /profile"); //перенаправляем в личный кабинет
-        // }
+        if (Session::get('logged') == true) {
+            header("Location: /profile"); //перенаправляем в личный кабинет
+        }
 
-        // if (Session::get('logged') == true) {
-        //     header("Location: /profile"); //перенаправляем в личный кабинет
-        // }
-
-
-    
         if (isset($_POST) and (!empty($_POST))) {
 
             $email = trim(strip_tags($_POST['email']));
@@ -149,7 +148,7 @@ class UsersController extends Controller
      */
     public function logout()
     {
-        session_unset();
+        Session::destroy();
         header('Location: /');
         return true;
     }

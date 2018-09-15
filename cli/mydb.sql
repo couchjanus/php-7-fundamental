@@ -86,3 +86,65 @@ CREATE TABLE `users` (
   `phone_number` varchar(13) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+-- Adminer 4.5.0 MySQL dump
+
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+SET NAMES utf8mb4;
+
+DROP TABLE IF EXISTS `orders`;
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `order_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `products` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `orders` (`id`, `user_id`, `order_date`, `products`, `status`) VALUES
+(2,	1,	'2018-02-05 12:24:17',	'\"[{\\\"Id\\\":\\\"4\\\",\\\"Product\\\":\\\"Blue\\u00a0cat\\\",\\\"Price\\\":\\\"333\\\",\\\"Quantity\\\":\\\"3\\\",\\\"Picture\\\":\\\"4.jpg\\\"}]\"',	4),
+(3,	1,	'2018-03-15 12:32:03',	'\"[{\\\"Id\\\":\\\"32\\\",\\\"Product\\\":\\\"New\\u00a0cat\\\",\\\"Price\\\":\\\"444\\\",\\\"Quantity\\\":\\\"3\\\",\\\"Picture\\\":\\\"\\/media\\/files_5aa797d585cab.png\\\"},{\\\"Id\\\":\\\"31\\\",\\\"Product\\\":\\\"My\\u00a0cat\\\",\\\"Price\\\":\\\"100\\\",\\\"Quantity\\\":\\\"3\\\",\\\"Picture\\\":\\\"\\/media\\/files_5aa7941eb7670.jpg\\\"},{\\\"Id\\\":\\\"33\\\",\\\"Product\\\":\\\"My\\u00a0car\\\",\\\"Price\\\":\\\"345\\\",\\\"Quantity\\\":\\\"3\\\",\\\"Picture\\\":\\\"\\/media\\/files_5aa7a7acae907.jpg\\\"}]\"',	1),
+(4,	1,	'2018-03-20 10:02:55',	'\"[{\\\"Id\\\":\\\"33\\\",\\\"Product\\\":\\\"My\\u00a0car\\\",\\\"Price\\\":\\\"345\\\",\\\"Quantity\\\":\\\"3\\\",\\\"Picture\\\":\\\"\\/media\\/files_5aa7a7acae907.jpg\\\"},{\\\"Id\\\":\\\"32\\\",\\\"Product\\\":\\\"New\\u00a0cat\\\",\\\"Price\\\":\\\"444\\\",\\\"Quantity\\\":\\\"3\\\",\\\"Picture\\\":\\\"\\/media\\/files_5aa797d585cab.png\\\"}]\"',	1),
+(5,	1,	'2018-03-20 10:03:59',	'\"[{\\\"Id\\\":\\\"31\\\",\\\"Product\\\":\\\"My\\u00a0cat\\\",\\\"Price\\\":\\\"100\\\",\\\"Quantity\\\":\\\"3\\\",\\\"Picture\\\":\\\"\\/media\\/files_5aa7941eb7670.jpg\\\"}]\"',	1);
+
+-- 2018-09-14 15:31:16
+
+
+-- Adminer 4.5.0 MySQL dump
+
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+SET NAMES utf8mb4;
+
+DROP TABLE IF EXISTS `permissions`;
+CREATE TABLE `permissions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `permissions` (`id`, `name`) VALUES
+(1,	'can_create');
+
+DROP TABLE IF EXISTS `role_permission`;
+CREATE TABLE `role_permission` (
+  `role_id` int(11) NOT NULL,
+  `permission_id` int(11) NOT NULL,
+  KEY `role_id` (`role_id`),
+  KEY `permission_id` (`permission_id`),
+  CONSTRAINT `role_permission_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`),
+  CONSTRAINT `role_permission_ibfk_2` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+-- 2018-09-14 20:59:21

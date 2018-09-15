@@ -3,7 +3,11 @@
   
 <script>
   var url = '/api/shop';
-  var shoppingCart = [];
+  
+  fetch(url).then((response) => response.json())
+  .then((data) => {
+    
+    var shoppingCart = [];
 
     function showCart(){
         if (shoppingCart.length == 0) {
@@ -33,14 +37,12 @@
         }
     }
     
-$(function(){
-  fetch(url).then((response) => response.json())
-  .then((data) => {
-    for (var i=0; i<data.length; i++) {
-        var $template = $($('#productItem').html());
-        $(".grid-layout").append(makeProductItem($template, data[i]));
-    }
-    
+    $(function(){
+        for (var i=0; i<Object.keys(data).length; i++){
+          var $template = $($('#productItem').html());
+          $(".grid-layout").append(makeProductItem($template, data[i]));
+        }
+
         if (localStorage.shoppingCart){
             shoppingCart = JSON.parse(localStorage.shoppingCart);
         }
@@ -260,7 +262,7 @@ $(function(){
                     if (d.r == "fail") {
                         window.location.href = d.url;
                     } else {
-                        // console.log(d.msg);
+                        
                         toggle_panel($('#cart-sidebar'), $('#shadow-layer'));
                         $('.main-container').empty();
                         
@@ -312,8 +314,6 @@ $(function(){
                 });
         });
 
-    
-    
     });
 
 });
